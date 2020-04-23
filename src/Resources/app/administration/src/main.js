@@ -1,6 +1,8 @@
 const {Application} = Shopware;
 
-Application.addServiceProviderDecorator()('cmsService', cmsService => {
+console.log('Hello');
+
+Application.addServiceProviderDecorator('cmsService', cmsService => {
     const decoratedMethod = cmsService.getEntityMappingTypes;
     cmsService.getEntityMappingTypes = function (entityName = null) {
         console.log(entityName);
